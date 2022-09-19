@@ -43,8 +43,7 @@ public class Television {
 
     private Integer sold;
 
-    public Television() {
-    }
+    public Television() {}
 
     public Television(Long id, String name, String type, String brand, String screenType, String screenQuality, double price, double availableSize, double refreshRate, boolean wifi, boolean smartTv, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
         this.id = id;
@@ -64,77 +63,57 @@ public class Television {
         this.ambiLight = ambiLight;
         this.originalStock = originalStock;
         this.sold = sold;
-
     }
 
 
     // Alle variable getters
+    public Long getId() { return id; }
 
-    public Long getId() {
-        return id;
-    }
+    public String getName() { return name; }
 
-    public String getName() {
-        return name;
-    }
+    public String getType() { return type; }
 
-    public String getType() {
-        return type;
-    }
+    public String getBrand() { return brand; }
 
-    public String getBrand() {
-        return brand;
-    }
+    public String getScreenType() { return screenType; }
 
-    public String getScreenType() {
-        return screenType;
-    }
+    public String getScreenQuality() { return screenQuality; }
 
-    public String getScreenQuality() {
-        return screenQuality;
-    }
+    public double getPrice() { return price; }
 
-    public double getPrice() {
-        return price;
-    }
+    public double getAvailableSize() { return availableSize; }
 
-    public double getAvailableSize() {
-        return availableSize;
-    }
-
-    public double getRefreshRate() {
-        return refreshRate;
-    }
+    public double getRefreshRate() { return refreshRate; }
 
     public boolean getWifi() {
         return wifi;
     }
 
-    public boolean getsmartTV() {
+    public boolean getSmartTv() {
         return smartTv;
     }
 
-    public boolean getvoiceControl() {
+    public boolean getVoiceControl() {
         return voiceControl;
     }
 
-    public boolean gethdr() {
+    public boolean getHdr() {
         return hdr;
     }
 
-    public boolean getbluetooth() {
+    public boolean getBluetooth() {
         return bluetooth;
     }
 
-    public boolean getambiLight() {
+    public boolean getAmbiLight() {
         return ambiLight;
     }
 
-    public Integer getoriginalStock() {
+    public Integer getOriginalStock() {
         return originalStock;
     }
 
-    public Integer getsold() {
+    public Integer getSold() {
         return sold;
     }
 
@@ -189,7 +168,7 @@ public class Television {
         this.voiceControl = voiceControl;
     }
 
-    public void hdr(boolean hdr) {
+    public void setHdr(boolean hdr) {
         this.hdr = hdr;
     }
 
@@ -205,18 +184,11 @@ public class Television {
         this.originalStock = originalStock;
     }
 
-    public void sold(Integer sold) {
+    public void setSold(Integer sold) {
         this.sold = sold;
     }
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -265,7 +237,7 @@ public class Television {
 //        this.ambiLight = ambiLight;
 //        this.originalStock = originalStock;
 //        this.sold = sold;
-//    }
+
 
 
 

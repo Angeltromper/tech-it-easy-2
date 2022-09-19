@@ -2,6 +2,7 @@ package dtos;
 
 public class TelevisionInputDto {
 
+    private Long id;
 
     private String name;
 
@@ -35,17 +36,18 @@ public class TelevisionInputDto {
 
     private Integer sold;
 
-    public TelevisionInputDto(Long id, String type, String brand, String name, double price, double availableSize, double refreshRate, String screenType, String screenQuality, boolean smartTv, boolean wifi, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
+    public TelevisionInputDto(Long id, String name, String type, String brand, String screenType, String screenQuality, double price, double availableSize, double refreshRate, boolean wifi, boolean smartTv, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
+        this.id = id;
+        this.name = name;
         this.type = type;
         this.brand = brand;
-        this.name = name;
+        this.screenType = screenType;
+        this.screenQuality = screenQuality;
         this.price = price;
         this.availableSize = availableSize;
         this.refreshRate = refreshRate;
-        this.screenType = screenType;
-        this.sreenQuality = sreenQuality;
-        this.smartTv = smartTv;
         this.wifi = wifi;
+        this.smartTv = smartTv;
         this.voiceControl = voiceControl;
         this.hdr = hdr;
         this.bluetooth = bluetooth;
@@ -72,31 +74,31 @@ public class TelevisionInputDto {
 
     public boolean getWifi() { return wifi; }
 
-    public boolean getsmartTV() {
+    public boolean getSmartTv() {
         return smartTv;
     }
 
-    public boolean getvoiceControl() {
+    public boolean getVoiceControl() {
         return voiceControl;
     }
 
-    public boolean gethdr() {
+    public boolean getHdr() {
         return hdr;
     }
 
-    public boolean getbluetooth() {
+    public boolean getBluetooth() {
         return bluetooth;
     }
 
-    public boolean getambiLight() {
+    public boolean getAmbiLight() {
         return ambiLight;
     }
 
-    public Integer getoriginalStock() {
+    public Integer getOriginalStock() {
         return originalStock;
     }
 
-    public Integer getsold() {
+    public Integer getSold() {
         return sold;
     }
 
@@ -164,7 +166,7 @@ public class TelevisionInputDto {
         this.originalStock = originalStock;
     }
 
-    public void sold(Integer sold) {
+    public void setSold(Integer sold) {
         this.sold = sold;
     }
 

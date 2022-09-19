@@ -38,16 +38,16 @@ public class TelevisionDto {
     public TelevisionDto() {
     }
 
-    public TelevisionDto(Long id, String type, String brand, String name, double price, double availableSize, double refreshRate, String screenType, String screenQuality, boolean smartTv, boolean wifi, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
+    public TelevisionDto(Long id, String name, String type, String brand, String screenType, String screenQuality, double price, double availableSize, double refreshRate, boolean smartTv, boolean wifi, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
         this.id = id;
+        this.name = name;
         this.type = type;
         this.brand = brand;
-        this.name = name;
+        this.screenType = screenType;
+        this.screenQuality = screenQuality;
         this.price = price;
         this.availableSize = availableSize;
         this.refreshRate = refreshRate;
-        this.screenType = screenType;
-        this.sreenQuality = sreenQuality;
         this.smartTv = smartTv;
         this.wifi = wifi;
         this.voiceControl = voiceControl;
@@ -66,7 +66,7 @@ public class TelevisionDto {
 
     public String getType() { return type; }
 
-    public String getBrand() { return brand;n}
+    public String getBrand() { return brand; }
 
     public String getScreenType() { return screenType; }
 
@@ -159,7 +159,7 @@ public class TelevisionDto {
         this.voiceControl = voiceControl;
     }
 
-    public void hdr(boolean hdr) {
+    public void setHdr(boolean hdr) {
         this.hdr = hdr;
     }
 
@@ -175,7 +175,7 @@ public class TelevisionDto {
         this.originalStock = originalStock;
     }
 
-    public void sold(Integer sold) {
+    public void setSold(Integer sold) {
         this.sold = sold;
     }
 
@@ -196,4 +196,4 @@ public class TelevisionDto {
 
 
 
-}
+

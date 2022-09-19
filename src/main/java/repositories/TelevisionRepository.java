@@ -4,7 +4,7 @@ import models.Television;
 
 import java.util.List;
 
-public interface TelevisionRepository extends JpaRepository <Television, Long> {
+public interface TelevisionRepository {
 
     List<Television> findAllTelevisionsByBrandEqualsIgnoreCase(String brand);
 

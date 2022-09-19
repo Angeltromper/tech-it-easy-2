@@ -1,5 +1,7 @@
 package service;
 
+import dtos.TelevisionDto;
+import dtos.TelevisionInputDto;
 import exceptions.RecordNotFoundException;
 import models.Television;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ public class TelevisionService {
     public TelevisionService(TelevisionRepository televisionRepository) {
         this.televisionRepository = televisionRepository;
     }
+
 
     public List<TelevisionDto> getAllTelevisions() {
         List<Television> tvList = televisionRepository.findAll();
@@ -66,7 +69,7 @@ public class TelevisionService {
         televisionRepository.deleteById(id);
     }
 
-    public TelevisionDto updateTelevision(Long id, TelevisionInpuDto inputDto) {
+    public TelevisionDto updateTelevision(Long id, TelevisionInputDto inputDto) {
 
         if (televisionRepository.findById(id).isPresent()) {
 
@@ -89,14 +92,14 @@ public class TelevisionService {
     public Television transferToTelevision(TelevisionInputDto dto) {
         var television = new Television();
 
+        television.setName(dto.getName());
         television.setType(dto.getType());
         television.setBrand(dto.getBrand());
-        television.setName(dto.getName());
+        television.setScreenType(dto.getScreenType());
+        television.setScreenQuality(dto.getScreenQuality());
         television.setPrice(dto.getPrice());
         television.setAvailableSize(dto.getAvailableSize());
         television.setRefreshRate(dto.getRefreshRate());
-        television.setScreenType(dto.getSreenType());
-        television.setScreenQuality(dto.getScreenQuality());
         television.setSmartTv(dto.getSmartTv());
         television.setWifi(dto.getWifi());
         television.setVoiceControl(dto.getVoiceControl());
@@ -110,29 +113,27 @@ public class TelevisionService {
     }
 
     public TelevisionDto transferToDto(Television television) {
-        TelevisonDto dto = new TelevisionDto();
+        TelevisionDto dto = new TelevisionDto();
 
-        dto.setId(televison.getId());
-        dto.setType(televison.getType());
-        dto.setBrand(televison.getBrand());
-        dto.setName(televison.getName());
-        dto.setPrice(televison.getPrice());
-        dto.setAvailableSize(televison.getAvailableSize());
+        dto.setId(television.getId());
+        dto.setName(television.getName());
+        dto.setType(television.getType());
+        dto.setBrand(television.getBrand());
+        dto.setScreenType(television.getScreenType());
+        dto.setScreenQuality(television.getScreenQuality());
+        dto.setPrice(television.getPrice());
+        dto.setAvailableSize(television.getAvailableSize());
         dto.setRefreshRate(television.getRefreshRate());
-        dto.setScreenType(televison.getScreenType());
-        dto.setSreenQuality(televison.getSreenQuality());
-        dto.setSmartTv(televison.getSmartTv());
-        dto.setWifi(televison.getWifi());
-        dto.setVoiceControl(televison.getVoiceControl());
-        dto.setHdr(televison.getHdr());
-        dto.setBluetooth(televison.getBluetooth());
-        dto.setAmbiLight(televison.getAmbiLight());
-        dto.setOriginalStock(televison.getOriginalStock());
-        dto.setSold(televison.getSold());
+        dto.setSmartTv(television.getSmartTv());
+        dto.setWifi(television.getWifi());
+        dto.setVoiceControl(television.getVoiceControl());
+        dto.setHdr(television.getHdr());
+        dto.setBluetooth(television.getBluetooth());
+        dto.setAmbiLight(television.getAmbiLight());
+        dto.setOriginalStock(television.getOriginalStock());
+        dto.setSold(television.getSold());
 
         return dto;
-
-
     }
 }
 
@@ -140,4 +141,6 @@ public class TelevisionService {
 
 
 
-}
+
+
+

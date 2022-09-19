@@ -1,9 +1,14 @@
 package controllers;
 
+import dtos.TelevisionDto;
+import dtos.TelevisionInputDto;
+import models.Television;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import service.TelevisionService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -22,11 +27,11 @@ public class TelevisionController {
 
         if (brand.isEmpty()) {
 
-            dtos = televisionService.getAllTelevions();
+            dtos = televisionService.getAllTelevisions();
 
         } else {
 
-            dtos = televisionService.getAllTelevionsByBrand(brand.get());
+            dtos = televisionService.getAllTelevisionsByBrand(brand.get());
         }
 
         return ResponseEntity.ok().body(dtos);
@@ -41,7 +46,7 @@ public class TelevisionController {
     }
 
     @PostMapping("televisions")
-    public ResponseEntity<Object> addTelevision(@RequestBody TelevisionInputDto) {
+    public ResponseEntity<Object> addTelevision(@RequestBody TelevisionInputDto televisionInputDto) {
 
         TelevisionDto dto = televisionService.addTelevision(televisionInputDto);
 
