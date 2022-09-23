@@ -1,13 +1,13 @@
-package service;
+package com.example.techiteasy2.service;
 
-import dtos.TelevisionDto;
-import dtos.TelevisionInputDto;
-import exceptions.RecordNotFoundException;
-import models.Television;
+import com.example.techiteasy2.exceptions.RecordNotFoundException;
+import com.example.techiteasy2.models.Television;
+import com.example.techiteasy2.dtos.TelevisionDto;
+import com.example.techiteasy2.dtos.TelevisionInputDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-import repositories.TelevisionRepository;
+import com.example.techiteasy2.repositories.TelevisionRepository;
 
 import java.util.ArrayList;
 import java.util.List;

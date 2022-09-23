@@ -1,6 +1,6 @@
-package repositories;
+package com.example.techiteasy2.repositories;
 
-import models.Television;
+import com.example.techiteasy2.models.Television;
 
 import java.util.List;
 

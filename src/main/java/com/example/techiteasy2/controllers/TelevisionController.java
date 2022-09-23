@@ -1,12 +1,11 @@
-package controllers;
+package com.example.techiteasy2.controllers;
 
-import dtos.TelevisionDto;
-import dtos.TelevisionInputDto;
-import models.Television;
+import com.example.techiteasy2.dtos.TelevisionDto;
+import com.example.techiteasy2.dtos.TelevisionInputDto;
+import com.example.techiteasy2.service.TelevisionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.TelevisionService;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +18,12 @@ public class TelevisionController {
 
     @Autowired
     public TelevisionController(TelevisionService televisionService) { this.televisionService = televisionService; }
+
+    @GetMapping
+    public String television() {
+        return "Televisie";
+    }
+
 
     @GetMapping("/televisions")
     public ResponseEntity<List<TelevisionDto>> getAllTelevisions(@RequestParam( value = "brand", required = false) Optional<String> brand) {

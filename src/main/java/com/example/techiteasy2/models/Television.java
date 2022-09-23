@@ -1,8 +1,15 @@
-package dtos;
+package com.example.techiteasy2.models;
 
-public class TelevisionInputDto {
+@Entity
+public class Television {
 
-    private Long id;
+    // Een entiteit moet een primary key bevatten(id)
+
+    @Id
+    @GeneretadValue
+    Long id;
+
+    // variabele declaraties
 
     private String name;
 
@@ -36,7 +43,9 @@ public class TelevisionInputDto {
 
     private Integer sold;
 
-    public TelevisionInputDto(Long id, String name, String type, String brand, String screenType, String screenQuality, double price, double availableSize, double refreshRate, boolean wifi, boolean smartTv, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
+    public Television() {}
+
+    public Television(Long id, String name, String type, String brand, String screenType, String screenQuality, double price, double availableSize, double refreshRate, boolean wifi, boolean smartTv, boolean voiceControl, boolean hdr, boolean bluetooth, boolean ambiLight, Integer originalStock, Integer sold) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -56,6 +65,10 @@ public class TelevisionInputDto {
         this.sold = sold;
     }
 
+
+    // Alle variable getters
+    public Long getId() { return id; }
+
     public String getName() { return name; }
 
     public String getType() { return type; }
@@ -72,7 +85,9 @@ public class TelevisionInputDto {
 
     public double getRefreshRate() { return refreshRate; }
 
-    public boolean getWifi() { return wifi; }
+    public boolean getWifi() {
+        return wifi;
+    }
 
     public boolean getSmartTv() {
         return smartTv;
@@ -101,6 +116,9 @@ public class TelevisionInputDto {
     public Integer getSold() {
         return sold;
     }
+
+
+    // Alle variable setters
 
     public void setId(Long id) {
         this.id = id;
@@ -150,7 +168,7 @@ public class TelevisionInputDto {
         this.voiceControl = voiceControl;
     }
 
-    public void hdr(boolean hdr) {
+    public void setHdr(boolean hdr) {
         this.hdr = hdr;
     }
 
@@ -172,6 +190,53 @@ public class TelevisionInputDto {
 
 }
 
+
+
+
+
+
+//    Aantekening:
+
+//    constructors hoeven niet per se aangemaakt te worden
+//    // Een default constructor
+//    public Television() {}
+//
+//    // Een constructor met alle gevraagde variable
+//    public Television(
+//            Long id,
+//            String type,
+//            String brand,
+//            String name,
+//            Double price,
+//            Double availableSize,
+//            Double refreshRate,
+//            String screenType,
+//            String screenQuality,
+//            Boolean smartTv,
+//            Boolean wifi,
+//            Boolean voiceControl,
+//            Boolean hdr,
+//            Boolean bluetooth,
+//            Boolean ambiLight,
+//            Integer originalStock,
+//            Integer sold ) {
+//        this.id = id;
+//        this.type = type;
+//        this.brand = brand;
+//        this.name = name;
+//        this.price = price;
+//        this.availableSize = availableSize;
+//        this.refreshRate = refreshRate;
+//        this.screenType = screenType;
+//        this.screenQuality = screenQuality;
+//        this.smartTv = smartTv;
+//        this.wifi = wifi;
+//        this.voiceControl = voiceControl;
+//        this.hdr = hdr;
+//        this.bluetooth = bluetooth;
+//        this.ambiLight = ambiLight;
+//        this.originalStock = originalStock;
+//        this.sold = sold;
 
 
 

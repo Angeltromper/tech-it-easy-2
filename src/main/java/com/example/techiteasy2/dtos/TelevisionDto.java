@@ -1,4 +1,4 @@
-package dtos;
+package com.example.techiteasy2.dtos;
 public class TelevisionDto {
 
     private Long id;
